@@ -21,5 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: "bgb_user"
+  password: "^NYnkS!eoboN"
+  database: "bgb_production_v1"
+  host:   "/cloudsql/bgb-app-292703:us-west1:rails-cloudsql-instance"
