@@ -21,5 +21,13 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: <%= Rails.application.credentials.dig(:production, :dp_username) %>
+  password: <%= Rails.application.credentials.dig(:production, :db_password) %>
+  database: <%= Rails.application.credentials.dig(:production, :db_database) %>
+  host:   <%= Rails.application.credentials.dig(:production, :db_host) %>
+
+  
