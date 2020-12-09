@@ -1,9 +1,11 @@
 class Api::V1::UsersController < ApplicationController
+    # before_action :authenticate_user!, except: [:create]
+    
     before_action :find_user, only: [:show, :update, :destroy]
 
     def index
         @users = User.all
-        render json: @users
+        # render json: @users
     end
 
     def show
@@ -40,7 +42,7 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :password, :dob)
+        params.require(:user).permit(:email, :name, :password, :date_of_birth)
     end
 
     def find_user
