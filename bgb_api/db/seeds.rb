@@ -4,6 +4,7 @@
 User.destroy_all
 
 user1 = User.new(
+  uid: 135,
   name: 'User 1',
   email: 'test1@test.com',
   password: 'password',
@@ -14,6 +15,7 @@ user1.skip_confirmation!
 user1.save!
 
 user2 = User.new(
+  uid: 136,
   name: 'User 2',
   email: 'test2@test.com',
   password: 'password',

@@ -1,24 +1,15 @@
-# README
+# Endpoints
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## User
 
-Things you may want to cover:
+- Sign-Up
+  - `POST to: /api/v1/users`
+    - required information: `name`, `email`, `date_of_birth`, `password`
+    - currently a "confirmation email" is sent to the email used to sign up
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Session
+- Sign In
+  - `Post to: /api/v1/sign_in`
+    - required information: `email`, `password`
+    - upon signing in, the response includes a `uid`, `access-token`, `client`, and `expiry` that must be passed back and forth on EACH request to the API
