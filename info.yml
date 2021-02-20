@@ -1,0 +1,50 @@
+project:
+  name: 'BGB-API'
+  owner: 'cs169'
+  teamId: '4'
+  identities:
+    pivotal:
+      url: 'https://www.pivotaltracker.com/n/projects/2487652'
+    heroku:
+      url: 'https://bgb-api.herokuapp.com/'
+    travis:
+      url: 'https://travis-ci.com/github/jkiyasu/BGB-API'
+    codecov:
+      url: 'https://app.codecov.io/gh/jkiyasu/BGB-API'
+  members:
+    member1:
+      name: 'Jenna'
+      surname: 'Kiyasu' 
+      githubUsername: 'jkiyasu'
+      pivotalUsername: 'jennakiyasu'
+      herokuEmail: 'jkiyasu@berkeley.edu'
+    member2:
+      name: 'Sarah'
+      surname: 'Soares' 
+      githubUsername: 'sjsoares'
+      pivotalUsername: 'string'
+      herokuEmail: 'sjsoares@berkeley.edu'
+    member3:
+      name: 'Izzy'
+      surname: 'Gerard' 
+      githubUsername: 'isabelager'
+      pivotalUsername: 'izzy2022'
+      herokuEmail: 'izzy2022@berkeley.edu'
+    member4:
+      name: 'Mariela'
+      surname: 'Hernadez' 
+      githubUsername: 'mariela-hdz'
+      pivotalUsername: 'marielahdz'
+      herokuEmail: 'mariela.hdz@berkeley.edu'
+    member5:
+      name: 'Merhawit'
+      surname: 'Temesgen' 
+      githubUsername: 'merhawit2019'
+      pivotalUsername: 'merhawit'
+      herokuEmail: 'merhawit@berkeley.edu'
+    member6:
+      name: 'Natasha'
+      surname: 'Hellebrandt' 
+      githubUsername: 'Nhellebrandt'
+      pivotalUsername: 'natashahellebrandt'
+      herokuEmail: 'Natashahellebrandt@berkeley.edu'
