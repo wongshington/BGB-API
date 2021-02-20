@@ -21,7 +21,7 @@
 #   database: db/test.sqlite3
 
 development:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: utf8
   database: bgb_dev
   pool: 5
@@ -29,7 +29,7 @@ development:
   password:
 
 test: &TEST
-  adapter: postgresql
+  adapter: sqlite3
   encoding: utf8
   database: bgb_test
   pool: 5
