@@ -1,7 +1,7 @@
 1) Travis CI badge [![Build Status](https://travis-ci.com/jkiyasu/BGB-API.svg?branch=master)](https://travis-ci.com/jkiyasu/BGB-API)
-2)da
-3)a
-4)a
+2) Coverage badge 
+3) CodeClimate Maintainability badge
+4) Bluejay badge
 5) Pivotal Tracker: https://www.pivotaltracker.com/n/projects/2487652
 
 # BGB-API
