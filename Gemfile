@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'sqlite3'
 # make sure references to sqlite3 gem ONLY appear in dev/test groups
 group :development, :test do
+  gem 'sqlite3'
 
 end 
 
