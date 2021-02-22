@@ -1,10 +1,9 @@
-1) Travis CI badge [![Build Status](https://travis-ci.com/jkiyasu/BGB-API.svg?branch=master)](https://travis-ci.com/jkiyasu/BGB-API)
+1) Travis CI badge [![Build Status](https://travis-ci.com/jkiyasu/BGB-API.svg?branch=main)](https://travis-ci.com/jkiyasu/BGB-API)
 2) Coverage badge <a href="https://codeclimate.com/github/jkiyasu/BGB-API/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8293d6d409c621772253/test_coverage" /></a>
 3) CodeClimate Maintainability badge <a href="https://codeclimate.com/github/jkiyasu/BGB-API/maintainability"><img 
 src="https://api.codeclimate.com/v1/badges/8293d6d409c621772253/maintainability" /></a>
-
-5) Bluejay badge
-6) Pivotal Tracker: https://www.pivotaltracker.com/n/projects/2487652
+4) Bluejay badge
+5) Pivotal Tracker: https://www.pivotaltracker.com/n/projects/2487652
 
 # BGB-API
 The back-end service for the BGB app.
