@@ -4,8 +4,6 @@ rvm: "2.7.1"
 cache:
   bundler: true
 
-gemfile: bgb_api/Gemfile
-
 env:
   global:
     - CC_TEST_REPORTER_ID=6482738ca1cc6b6710e6132dc15d01f0871771dac2cb31e814f1c7326fb4a726
