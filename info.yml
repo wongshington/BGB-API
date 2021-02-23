@@ -1,16 +1,17 @@
 project:
-  name: 'q2q'
+  name: 'bgb'
   owner: 'cs169'
   teamId: '4'
+  coach: 'Cassidy Hardin'
   identities:
     pivotal:
-      url: 'https://www.pivotaltracker.com/projects/2487821'
+      url: 'https://www.pivotaltracker.com/n/projects/2487652'
     heroku:
       url: 'https://cue-to-cue-169l.herokuapp.com/'
     travis:
-      url: 'https://travis-ci.com/github/sjsoares/cue-to-cue-169L4'
-    codecov:
-      url: 'https://app.codecov.io/gh/sjsoares/cue-to-cue-169L'
+      url: 'https://travis-ci.com/github/jkiyasu/BGB-API'
+    codeclimate:
+      url: 'https://codeclimate.com/github/jkiyasu/BGB-API'
   members:
     member1:
       name: 'Jenna'
@@ -18,33 +19,3 @@ project:
       githubUsername: 'jkiyasu'
       pivotalUsername: 'jennakiyasu'
       herokuEmail: 'jkiyasu@berkeley.edu'
-    member2:
-      name: 'Sarah'
-      surname: 'Soares' 
-      githubUsername: 'sjsoares'
-      pivotalUsername: 'string'
-      herokuEmail: 'sjsoares@berkeley.edu'
-    member3:
-      name: 'Izzy'
-      surname: 'Gerard' 
-      githubUsername: 'isabelager'
-      pivotalUsername: 'izzy2022'
-      herokuEmail: 'izzy2022@berkeley.edu'
-    member4:
-      name: 'Mariela'
-      surname: 'Hernadez' 
-      githubUsername: 'mariela-hdz'
-      pivotalUsername: 'marielahdz'
-      herokuEmail: 'mariela.hdz@berkeley.edu'
-    member5:
-      name: 'Merhawit'
-      surname: 'Temesgen' 
-      githubUsername: 'merhawit2019'
-      pivotalUsername: 'merhawit'
-      herokuEmail: 'merhawit@berkeley.edu'
-    member6:
-      name: 'Natasha'
-      surname: 'Hellebrandt' 
-      githubUsername: 'Nhellebrandt'
-      pivotalUsername: 'natashahellebrandt'
-      herokuEmail: 'Natashahellebrandt@berkeley.edu'
