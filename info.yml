@@ -10,8 +10,8 @@ project:
       url: 'https://bgb-api.herokuapp.com/'
     travis:
       url: 'https://travis-ci.com/github/jkiyasu/BGB-API'
-    codecov:
-      url: 'https://app.codecov.io/gh/jkiyasu/BGB-API'
+    codeclimate:
+      url: 'https://codeclimate.com/github/jkiyasu/BGB-API'
   members:
     member1:
       name: 'Jenna'
