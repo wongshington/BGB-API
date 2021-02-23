@@ -1,0 +1,31 @@
+language: ruby
+rvm: "2.7.1"
+
+cache:
+  bundler: true
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=
+
+before_install:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
+install:
+  - bundle install --without production --path=${BUNDLE_PATH:-vendor/bundle}
+  - npm install
+
+before_script: bundle exec rake db:create db:migrate
+
+script:
+  - bundle exec rake
+  - bundle exec cucumber
+  - bundle exec rspec
+
+# Pipe the coverage data to Code Climate
+after_script:
+  - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
+  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
+  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
