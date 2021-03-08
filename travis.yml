@@ -1,31 +1,31 @@
+# multiple tests suites
+# working example can be found at https://github.com/scottohara/loot
+
 language: ruby
 rvm: "2.7.1"
 
+# Cache gems
 cache:
   bundler: true
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=6482738ca1cc6b6710e6132dc15d01f0871771dac2cb31e814f1c7326fb4a726
+    CC_TEST_REPORTER_ID=6482738ca1cc6b6710e6132dc15d01f0871771dac2cb31e814f1c7326fb4a726
 
 before_install:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
 
 install:
-  - bundle install --without production --path=${BUNDLE_PATH:-vendor/bundle}
-  - npm install
+  - bundle install --without production --path=${BUNDLE_PATH:-vendor/bundle}  # Install ruby gems, excluding production only gems such as unicorn (already present by default in Travis)
 
+# Setup the database
 before_script: bundle exec rake db:create db:migrate
 
+# Run the test suites
 script:
-  - bundle exec rake
   - bundle exec cucumber
-  - bundle exec rspec
 
 # Pipe the coverage data to Code Climate
 after_script:
-  - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
-  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
-  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
+  - ./cc-test-reporter after-build  --exit-code $TRAVIS_TEST_RESULT
