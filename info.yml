@@ -1,0 +1,21 @@
+project:
+  name: 'BGB-API'
+  owner: 'cs169'
+  teamId: '4'
+  coach: 'Cassidy Hardin'
+  identities:
+    pivotal:
+      url: 'https://www.pivotaltracker.com/n/projects/2487652'
+    heroku:
+      url: 'https://bgb-api.herokuapp.com/'
+    travis:
+      url: 'https://travis-ci.com/github/jkiyasu/BGB-API'
+    codeclimate:
+      url: 'https://codeclimate.com/github/jkiyasu/BGB-API'
+  members:
+    member1:
+      name: 'Jenna'
+      surname: 'Kiyasu' 
+      githubUsername: 'jkiyasu'
+      pivotalUsername: 'jennakiyasu'
+      herokuEmail: 'jkiyasu@berkeley.edu'
