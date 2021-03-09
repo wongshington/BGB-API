@@ -1,6 +1,6 @@
 1) Travis CI badge [![Build Status](https://travis-ci.com/jkiyasu/BGB-API.svg?branch=main)](https://travis-ci.com/jkiyasu/BGB-API)
 2) Coverage badge <a href="https://codeclimate.com/github/jkiyasu/BGB-API/maintainability"><img src="https://api.codeclimate.com/v1/badges/0e78432125b90930ce25/maintainability" /></a>
-3) CodeClimate Maintainability badge <a href="https://codeclimate.com/github/rails/rails/test_coverage"><img src="https://api.codeclimate.com/v1/badges/d90e0f308dca4ed4cb90/test_coverage" /></a>
+3) CodeClimate Maintainability badge <a href="https://codeclimate.com/github/rails/rails/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0e78432125b90930ce25/test_coverage" /></a>
 
 
 4) Bluejay badge [![Bluejay Dashboard](https://img.shields.io/badge/Bluejay-Dashboard_4-blue.svg)](http://dashboard.bluejay.governify.io/dashboard/script/dashboardLoader.js?dashboardURL=https://reporter.bluejay.governify.io/api/v4/dashboards/tpa-CS169L-GH-jkiyasu_BGB-API/main)
