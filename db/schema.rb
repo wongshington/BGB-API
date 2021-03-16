@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_031958) do
+ActiveRecord::Schema.define(version: 2021_02_27_051016) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "connectors", force: :cascade do |t|
+    t.integer "resource_id_id"
+    t.integer "topic_id_id"
+    t.index ["resource_id_id"], name: "index_connectors_on_resource_id_id"
+    t.index ["topic_id_id"], name: "index_connectors_on_topic_id_id"
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string "resource"
+    t.string "phone"
+    t.string "description"
+    t.string "hours"
+    t.float "distance"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "topic"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false

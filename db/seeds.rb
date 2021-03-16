@@ -24,3 +24,41 @@ user2 = User.new(
 )
 user2.skip_confirmation!
 user2.save!
+
+Resource.destroy_all
+
+resource1 = Resource.new(
+    resource: "isabel",
+    description: "is dumb",
+    phone: "(123) 456 - 7890", #will need to be changed later to call phone number
+    hours: "8:00am - 5:00pm",
+    distance: 4.5
+)
+
+resource2 = Resource.new(
+    resource: "natasha",
+    description: "is notdumb",
+    phone: "(321) 456 - 7890", #will need to be changed later to call phone number
+    hours: "4:00pm - 5:00pm",
+    distance: 6.9
+)
+resource1.save!
+resource2.save!
+
+Topic.destroy_all
+
+topic1 = Topic.new(
+    topic: "BLM"
+)
+
+topic2 = Topic.new(
+    topic: "LGBTQ+"
+)
+
+topic1.save!
+topic2.save!
+
+topics = ["Legal", "Physical Health", "Mental Wellbeing", "Immediate Danger", "Domestic Issues", "General"]
+topics.each do |t|
+  Topic.create(topic: t)
+end
