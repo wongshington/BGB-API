@@ -8,8 +8,6 @@
 #  hours       :string
 #  phone       :string
 #  resource    :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
 #
 FactoryBot.define do
   factory :resource do
