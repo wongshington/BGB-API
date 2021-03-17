@@ -47,18 +47,37 @@ resource2.save!
 
 Topic.destroy_all
 
-topic1 = Topic.new(
-    topic: "BLM"
+blm = Topic.create(topic: "BLM")
+lgbtq = Topic.create(topic: "LGBTQ+")
+legal = Topic.create(topic: "Legal")
+physical_health = Topic.create(topic: "Physical Health")
+mental_wellbeing = Topic.create(topic: "Mental Wellbeing")
+immediate_danger = Topic.create(topic: "Immediate Danger")
+domestic_issues = Topic.create(topic: "Domestic Issues")
+general = Topic.create(topic: "General")
+
+#topics = ["Legal", "Physical Health", "Mental Wellbeing", "Immediate Danger", "Domestic Issues", "General"]
+#topics.each do |name, t|
+#Topic.create(topic: t)
+#end
+
+#one way to do it
+Connector.destroy_all
+
+connector1 = Connector.new(
+    #resource_id_id: resource1.id,
+    #topic_id_id: topic2.id
+    resource: resource1,
+    #resource_id_id: resource1.id,
+    topic: legal
 )
+connector1.save!
 
-topic2 = Topic.new(
-    topic: "LGBTQ+"
-)
+#lgbtq = Topic.where(topic: "LGBTQ+")
+#physical_health = Topic.where(topic: "Physical Health")
+#resource2.topics = [Topic.where(topic: "Immediate Danger").first, Topic.where(topic: "Physical Health").first]
 
-topic1.save!
-topic2.save!
+#better way to do it
+resource1.topics = [blm, legal, general]
+resource2.topics = [immediate_danger, mental_wellbeing, legal]
 
-topics = ["Legal", "Physical Health", "Mental Wellbeing", "Immediate Danger", "Domestic Issues", "General"]
-topics.each do |t|
-  Topic.create(topic: t)
-end

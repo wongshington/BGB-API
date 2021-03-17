@@ -6,7 +6,6 @@ class CreateResources < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :hours
       t.float :distance
-
     end
   end
 end
