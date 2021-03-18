@@ -10,15 +10,20 @@
 The back-end service for the BGB app.
 
 # SQLite
-try '$ bundle exec rake...' if '$ rails...' doesn't work
-### $ rails db:migrate 
-### $ rails db:reset 
+try `$ bundle exec rake...` if `$ rails...` doesn't work
+
+`$ rails db:migrate`
+
+`$ rails db:reset` 
 (includes drop etc...)
-### $rails db:seed
+
+`$rails db:seed`
 (if just changing seeds.rb, instead of rails db:reset)
-### $ rails db
+
+`$ rails db`
 to access the SQLite command line. Commands take the form of SQL queries. Don't forget the semicolon;
-### $^D 
+
+`$^D`
 to quit the SQL command line
 
 ## Resources
