@@ -7,6 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+
 require 'devise'
 require_relative 'support/controller_macros'
 
@@ -70,4 +71,13 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.use_transactional_fixtures = true
+
+  # shoulda matcher configuration per: https://github.com/thoughtbot/shoulda-matchers#rspec
+  require 'shoulda/matchers'
+  Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
 end

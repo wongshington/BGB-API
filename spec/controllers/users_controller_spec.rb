@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::UsersController, type: :controller do
-
-    
+RSpec.describe Api::V1::UsersController, type: :controller do    
     # Minimal set of attributes required to create a valid User
      let(:valid_user) {
         { :uid => 118, :email => "Test2@email.com", :password => "password2", :password_confirmation => "password2", :date_of_birth => Date.new(2015, 12, 8), :name => "test name" }
@@ -13,19 +11,28 @@ RSpec.describe Api::V1::UsersController, type: :controller do
         { :uid => 117, :email => "test1@test.com", :password => "password" }
     }
 
+    describe "GET #show" do
+        it { should route(:get, '/api/v1/users/1').to(action: :show, id: 1) }
+    end
+
     describe "GET #index" do
-      # login the user first using a helper function
-        login_user
+        it { should route(:get, '/api/v1/users').to(action: :index) }
 
-        it "returns a success response when providing valid credentials" do
+        before { get :index }
+        it { should respond_with(200) }
 
-            user1 = User.find_by(email: valid_login[:email])
-            request.headers.merge! (user1).create_new_auth_token
+        # login the user first using a helper function
+        # login_user
 
-            get :index, params: {}
+        # it "returns a success response when providing valid credentials" do
+
+        #     user1 = User.find_by(email: valid_login[:email])
+        #     request.headers.merge! (user1).create_new_auth_token
+
+        #     get :index, params: {}
         
-            expect(response).to be_successful # be_successful expects a HTTP Status code of 200
-        end
+        #     expect(response).to be_successful # be_successful expects a HTTP Status code of 200
+        # end
     end
 
     describe "POST #create" do    
@@ -43,6 +50,8 @@ RSpec.describe Api::V1::UsersController, type: :controller do
         
             expect(response.status).to eq(400) # unsuccessful 400 status response
         end
+
+    
     end
 
 end

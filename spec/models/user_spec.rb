@@ -40,24 +40,30 @@
 require 'rails_helper'
 
 describe User do
-  describe 'validation' do
-    it 'ensures mandatory fields are present' do
-      user = User.new 
-      expect(user.save).to be(false)
 
-      expect(user.errors[:email]).not_to be_nil
-      expect(user.errors[:name]).not_to be_nil
-      expect(user.errors[:encrypted_password]).not_to be_nil
-      expect(user.errors[:date_of_birth]).not_to be_nil
-    end
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:date_of_birth) }
+  
 
-    it 'ensures email uniqueness' do
-      user1 = create(:user, email: "myuser@example.com")
-      user2 = build(:user, email: "myuser@example.com")
+  # describe 'validation' do
+  #   it 'ensures mandatory fields are present' do
+  #     user = User.new 
+  #     expect(user.save).to be(false)
 
-      expect(user2.save).to be(false)
-      expect(user2.errors[:email]).not_to be_nil
-    end
+  #     expect(user.errors[:email]).not_to be_nil
+  #     expect(user.errors[:name]).not_to be_nil
+  #     expect(user.errors[:encrypted_password]).not_to be_nil
+  #     expect(user.errors[:date_of_birth]).not_to be_nil
+  #   end
 
-  end
+  #   it 'ensures email uniqueness' do
+  #     user1 = create(:user, email: "myuser@example.com")
+  #     user2 = build(:user, email: "myuser@example.com")
+
+  #     expect(user2.save).to be(false)
+  #     expect(user2.errors[:email]).not_to be_nil
+  #   end
+
+  # end
 end
