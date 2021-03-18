@@ -8,6 +8,42 @@ src="https://api.codeclimate.com/v1/badges/8293d6d409c621772253/maintainability"
 # BGB-API
 The back-end service for the BGB app.
 
+# SQLite
+try '$ bundle exec rake...' if '$ rails...' doesn't work
+### $ rails db:migrate 
+### $ rails db:reset 
+(includes drop etc...)
+### $rails db:seed
+(if just changing seeds.rb, instead of rails db:reset)
+### $ rails db
+to access the SQLite command line. Commands take the form of SQL queries. Don't forget the semicolon;
+### $^D 
+to quit the SQL command line
+
+## Resources
+- id: integer 
+- description: string
+- distance: float
+- hours: string
+- phone: string
+- resource: string
+## Topics
+- id: integer 
+- Topic: string 
+
+Each topic object can be referenced by underscore separated variable name. 
+Since there is so few, I seeded them this way to access them easily.
+
+EX: to access the topic for "Immediate Danger", use immediate_danger.
+
+## Connectors
+- resource_id: integer
+- topic_id: integer
+
+Can mainly ignore, just the work around for the many-to-many relation. 
+Can create a connector using Connector.create(...) to add a new resource-topic connection using foreign keys resource_id and topic_id.
+
+OR (easy) assign resouce_var_name.topics to list of topics or topic_var_name.resources etc.
 
 # Endpoints
 
@@ -24,3 +60,4 @@ The back-end service for the BGB app.
   - `Post to: /api/v1/sign_in`
     - required information: `email`, `password`
     - upon signing in, the response includes a `uid`, `access-token`, `client`, and `expiry` that must be passed back and forth on EACH request to the API
+    
