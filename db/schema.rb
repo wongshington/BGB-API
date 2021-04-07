@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_17_221129) do
+ActiveRecord::Schema.define(version: 2021_04_07_054052) do
 
   create_table "connectors", force: :cascade do |t|
     t.integer "resource_id"
@@ -19,10 +19,14 @@ ActiveRecord::Schema.define(version: 2021_03_17_221129) do
 
   create_table "resources", force: :cascade do |t|
     t.string "resource"
-    t.string "phone"
     t.string "description"
     t.string "hours"
     t.float "distance"
+    t.string "region"
+    t.string "address"
+    t.string "website"
+    t.string "notes"
+    t.integer "phone"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -51,10 +55,10 @@ ActiveRecord::Schema.define(version: 2021_03_17_221129) do
     t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "location"
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
     t.json "tokens"
+    t.string "location"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
