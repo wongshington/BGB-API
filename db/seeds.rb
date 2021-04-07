@@ -24,3 +24,60 @@ user2 = User.new(
 )
 user2.skip_confirmation!
 user2.save!
+
+Resource.destroy_all
+
+resource1 = Resource.new(
+    resource: "isabel",
+    description: "is dumb",
+    phone: "(123) 456 - 7890", #will need to be changed later to call phone number
+    hours: "8:00am - 5:00pm",
+    distance: 4.5
+)
+
+resource2 = Resource.new(
+    resource: "natasha",
+    description: "is notdumb",
+    phone: "(321) 456 - 7890", #will need to be changed later to call phone number
+    hours: "4:00pm - 5:00pm",
+    distance: 6.9
+)
+resource1.save!
+resource2.save!
+
+Topic.destroy_all
+
+blm = Topic.create(topic: "BLM")
+lgbtq = Topic.create(topic: "LGBTQ+")
+legal = Topic.create(topic: "Legal")
+physical_health = Topic.create(topic: "Physical Health")
+mental_wellbeing = Topic.create(topic: "Mental Wellbeing")
+immediate_danger = Topic.create(topic: "Immediate Danger")
+domestic_issues = Topic.create(topic: "Domestic Issues")
+general = Topic.create(topic: "General")
+
+#topics = ["Legal", "Physical Health", "Mental Wellbeing", "Immediate Danger", "Domestic Issues", "General"]
+#topics.each do |name, t|
+#Topic.create(topic: t)
+#end
+
+#one way to do it
+Connector.destroy_all
+
+connector1 = Connector.new(
+    #resource_id_id: resource1.id,
+    #topic_id_id: topic2.id
+    resource: resource1,
+    #resource_id_id: resource1.id,
+    topic: legal
+)
+connector1.save!
+
+#lgbtq = Topic.where(topic: "LGBTQ+")
+#physical_health = Topic.where(topic: "Physical Health")
+#resource2.topics = [Topic.where(topic: "Immediate Danger").first, Topic.where(topic: "Physical Health").first]
+
+#better way to do it
+resource1.topics = [blm, legal, general]
+resource2.topics = [immediate_danger, mental_wellbeing, legal]
+
