@@ -10,28 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_054052) do
+ActiveRecord::Schema.define(version: 2020_11_13_031958) do
 
-  create_table "connectors", force: :cascade do |t|
-    t.integer "resource_id"
-    t.integer "topic_id"
-  end
-
-  create_table "resources", force: :cascade do |t|
-    t.string "resource"
-    t.string "description"
-    t.string "hours"
-    t.float "distance"
-    t.string "region"
-    t.string "address"
-    t.string "website"
-    t.string "notes"
-    t.integer "phone"
-  end
-
-  create_table "topics", force: :cascade do |t|
-    t.string "topic"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
