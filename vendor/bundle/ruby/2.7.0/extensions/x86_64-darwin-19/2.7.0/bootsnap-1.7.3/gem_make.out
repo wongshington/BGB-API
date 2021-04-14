@@ -1,0 +1,15 @@
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+/Users/jk/.rvm/rubies/ruby-2.7.1/bin/ruby -I /Users/jk/.rvm/rubies/ruby-2.7.1/lib/ruby/2.7.0 -r ./siteconf20210406-93010-vulzci.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20210406-93010-1sjqgnm/bootsnap
