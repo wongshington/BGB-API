@@ -1,0 +1,50 @@
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.0/ext/ffi_c
+/Users/jk/.rvm/rubies/ruby-2.7.1/bin/ruby -I /Users/jk/.rvm/rubies/ruby-2.7.1/lib/ruby/2.7.0 -r ./siteconf20210406-93010-la0wxb.rb extconf.rb
+checking for ffi_prep_closure_loc() in -lffi... yes
+checking for ffi_prep_cif_var()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+creating extconf.h
+creating Makefile
+
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.0/ext/ffi_c
+make "DESTDIR=" clean
+
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.0/ext/ffi_c
+make "DESTDIR="
+compiling AbstractMemory.c
+compiling ArrayType.c
+compiling Buffer.c
+compiling Call.c
+compiling ClosurePool.c
+compiling DynamicLibrary.c
+compiling Function.c
+Function.c:867:17: warning: implicit declaration of function 'ffi_prep_closure_loc' is invalid in C99 [-Wimplicit-function-declaration]
+    ffiStatus = ffi_prep_closure_loc(closure->pcl, &fnInfo->ffi_cif, callback_invoke, closure, code);
+                ^
+1 warning generated.
+compiling FunctionInfo.c
+compiling LastError.c
+compiling LongDouble.c
+compiling MappedType.c
+compiling MemoryPointer.c
+compiling MethodHandle.c
+compiling Platform.c
+compiling Pointer.c
+compiling Struct.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Thread.c
+compiling Type.c
+compiling Types.c
+compiling Variadic.c
+Variadic.c:245:17: warning: implicit declaration of function 'ffi_prep_cif_var' is invalid in C99 [-Wimplicit-function-declaration]
+    ffiStatus = ffi_prep_cif_var(&cif, invoker->abi, fixedCount, paramCount, ffiReturnType, ffiParamTypes);
+                ^
+1 warning generated.
+compiling ffi.c
+linking shared-object ffi_c.bundle
+
+current directory: /Users/jk/cs169/BGB-API/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.0/ext/ffi_c
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20210406-93010-1dnmdt3
