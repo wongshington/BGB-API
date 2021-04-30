@@ -10,11 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_054052) do
+ActiveRecord::Schema.define(version: 2021_04_30_160800) do
 
   create_table "connectors", force: :cascade do |t|
     t.integer "resource_id"
     t.integer "topic_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id", "followee_id"], name: "index_follows_on_follower_id_and_followee_id", unique: true
+  end
+
+  create_table "guide_likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "guide_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "guide_id"], name: "index_guide_likes_on_user_id_and_guide_id", unique: true
   end
 
   create_table "resources", force: :cascade do |t|
@@ -27,6 +43,23 @@ ActiveRecord::Schema.define(version: 2021_04_07_054052) do
     t.string "website"
     t.string "notes"
     t.integer "phone"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer "tagger_id", null: false
+    t.integer "tagged_id", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tagger_id", "tagged_id", "post_id"], name: "index_tags_on_tagger_id_and_tagged_id_and_post_id", unique: true
+  end
+
+  create_table "topic_likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "topic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "topic_id"], name: "index_topic_likes_on_user_id_and_topic_id", unique: true
   end
 
   create_table "topics", force: :cascade do |t|
