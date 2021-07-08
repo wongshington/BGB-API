@@ -2,7 +2,7 @@
 #
 # Table name: connectors
 #
-#  id          :integer          not null, primary key
+#  id          :bigint           not null, primary key
 #  resource_id :integer
 #  topic_id    :integer
 #

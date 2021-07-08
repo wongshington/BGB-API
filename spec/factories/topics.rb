@@ -2,7 +2,7 @@
 #
 # Table name: topics
 #
-#  id    :integer          not null, primary key
+#  id    :bigint           not null, primary key
 #  topic :string
 #
 FactoryBot.define do

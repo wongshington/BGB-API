@@ -2,13 +2,13 @@
 #
 # Table name: resources
 #
-#  id          :integer          not null, primary key
+#  id          :bigint           not null, primary key
 #  address     :string
 #  description :string
 #  distance    :float
 #  hours       :string
 #  notes       :string
-#  phone       :integer
+#  phone       :string
 #  region      :string
 #  resource    :string
 #  website     :string

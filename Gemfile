@@ -3,15 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-# make sure references to sqlite3 gem ONLY appear in dev/test groups
-group :development, :test do
-  gem 'sqlite3'
-end 
+# # make sure references to sqlite3 gem ONLY appear in dev/test groups
+# group :development, :test do
+#   gem 'sqlite3'
+# end 
 
 # make sure the following gems are in your production group:
-group :production do
-  gem 'pg'              # use PostgreSQL in production (Heroku)
-end
+# group :production do
+#   gem 'pg'              # use PostgreSQL in production (Heroku)
+# end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -23,7 +23,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # psql
-#gem 'pg', '~> 1.2.3'
+gem 'pg'
 
 gem 'pry-rails'
 
